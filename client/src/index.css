@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  
+  body {
+    background-color: #040711;
+    color: #e2e8f0;
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Custom Cyber Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #080d1e;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #0e2448;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00f5ff;
+  }
+}
+
+@layer components {
+  /* Glassmorphism HUD Panels */
+  .glass-hud {
+    background: rgba(13, 21, 39, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 245, 255, 0.16);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(0, 245, 255, 0.03);
+  }
+
+  .glass-hud-hover {
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .glass-hud-hover:hover {
+    border-color: rgba(0, 245, 255, 0.4);
+    box-shadow: 0 12px 40px -10px rgba(0, 245, 255, 0.15), inset 0 0 25px rgba(0, 245, 255, 0.06);
+    transform: translateY(-2px);
+  }
+
+  /* Glowing Neon Buttons */
+  .btn-cyber-cyan {
+    @apply relative inline-flex items-center justify-center font-display font-medium text-xs tracking-wider uppercase px-5 py-2.5 rounded-lg text-cyber-black bg-cyber-cyan transition-all duration-200;
+    box-shadow: 0 0 18px rgba(0, 245, 255, 0.45);
+  }
+  .btn-cyber-cyan:hover {
+    @apply bg-cyan-300;
+    box-shadow: 0 0 28px rgba(0, 245, 255, 0.75);
+    transform: translateY(-1px);
+  }
+  .btn-cyber-cyan:active {
+    transform: translateY(0);
+  }
+
+  .btn-cyber-outline {
+    @apply relative inline-flex items-center justify-center font-display font-medium text-xs tracking-wider uppercase px-5 py-2.5 rounded-lg text-cyber-cyan bg-cyber-surface/60 border border-cyber-cyan/40 hover:border-cyber-cyan hover:bg-cyber-cyan/10 transition-all duration-200;
+  }
+
+  .btn-cyber-purple {
+    @apply relative inline-flex items-center justify-center font-display font-medium text-xs tracking-wider uppercase px-5 py-2.5 rounded-lg text-white bg-cyber-purple transition-all duration-200;
+    box-shadow: 0 0 18px rgba(168, 85, 247, 0.45);
+  }
+  .btn-cyber-purple:hover {
+    @apply bg-purple-500;
+    box-shadow: 0 0 28px rgba(168, 85, 247, 0.75);
+    transform: translateY(-1px);
+  }
+
+  /* Cyber Grid Background Effect */
+  .cyber-grid-pattern {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(0, 245, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 245, 255, 0.05) 1px, transparent 1px);
+  }
+
+  /* Scanline Overlay */
+  .scanline {
+    background: linear-gradient(
+      rgba(18, 16, 16, 0) 50%, 
+      rgba(0, 0, 0, 0.25) 50%
+    ), linear-gradient(
+      90deg,
+      rgba(255, 0, 0, 0.03),
+      rgba(0, 255, 0, 0.01),
+      rgba(0, 0, 255, 0.03)
+    );
+    background-size: 100% 3px, 6px 100%;
+    pointer-events: none;
+  }
+}
+
+/* Telemetry Badge */
+.telemetry-badge {
+  font-family: 'Fira Code', monospace;
+  letter-spacing: 0.08em;
+  font-size: 0.7rem;
+}

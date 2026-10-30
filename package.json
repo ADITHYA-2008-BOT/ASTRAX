@@ -1,0 +1,31 @@
+{
+  "name": "aeronull-monorepo",
+  "version": "1.0.0",
+  "description": "AeroNull - Antigravity Physics & Spacetime Metric Engineering Full-Stack Web Application",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -k -n \"API,WEB\" -c \"cyan.bold,magenta.bold\" \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "start": "cd server && npm start",
+    "build": "cd client && npm run build",
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install --legacy-peer-deps"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.5"
+  },
+  "keywords": [
+    "antigravity",
+    "quantum-gravity",
+    "meissner-effect",
+    "superconductivity",
+    "gemini-ai",
+    "supabase",
+    "zod",
+    "express",
+    "react",
+    "tailwind"
+  ],
+  "author": "AeroNull Quantum Propulsion Group",
+  "license": "MIT"
+}
